@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Reset your password — Muhit</title>
+<meta name="theme-color" content="#12141f">
+<link rel="icon" href="/assets/icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600&family=Alata&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<main class="center">
+  <div class="panel">
+    <a href="/"><img class="logo" src="/assets/logo.png" alt="Muhit"></a>
+
+    <div id="ok">
+      <div class="badge">🔑</div>
+      <div class="label">Almost there</div>
+      <h1>Choose a new password</h1>
+      <p>Tap below to open Muhit and set your new password.</p>
+      <a id="open" class="btn" href="muhit://auth/callback?next=reset">Open Muhit</a>
+      <p class="hint">Open this link on the phone where Muhit is installed.</p>
+    </div>
+
+    <div id="bad" hidden>
+      <div class="badge bad">!</div>
+      <div class="label">Link not valid</div>
+      <h1>This link has already been used or has expired</h1>
+      <p>Reset links work once and expire after an hour. Request a new one from the Muhit sign-in screen.</p>
+      <a class="btn" href="muhit://">Open Muhit</a>
+    </div>
+  </div>
+</main>
+<script>
+  // Same hand-off as /confirmed, but the app opens its Set New Password screen.
+  var q = new URLSearchParams(location.search);
+  var h = new URLSearchParams(location.hash.slice(1));
+  var error = q.get("error_code") || h.get("error_code") || q.get("error") || h.get("error");
+  var code = q.get("code");
+  if (error || !code) {
+    document.getElementById("ok").hidden = true;
+    document.getElementById("bad").hidden = false;
+  } else {
+    document.getElementById("open").href = "muhit://auth/callback?next=reset&code=" + encodeURIComponent(code);
+  }
+</script>
+</body>
+</html>
