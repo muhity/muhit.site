@@ -100,3 +100,10 @@ footer { border-top: 1px solid var(--edge); padding: 28px 0 40px; color: var(--m
   .hero { padding-top: 32px; }
   footer { flex-direction: column; }
 }
+
+/* Legal pages */
+.doc main { max-width: 720px; margin: 24px auto 64px; }
+.doc main h1 { font-size: clamp(30px, 5vw, 42px); font-weight: 600; margin: 10px 0 28px; }
+.doc main h2 { font-size: 19px; font-weight: 600; margin: 30px 0 8px; }
+.doc main p { color: #c4c6d2; margin: 0; }
+footer a { color: var(--mut); }
