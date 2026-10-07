@@ -2,98 +2,189 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Muhit — Arabic Dictionary</title>
-<meta name="description" content="Muhit is an offline Arabic–English dictionary with roots, full verb conjugations, textbook vocabulary and spaced-repetition practice.">
-<meta name="theme-color" content="#12141f">
-<meta property="og:title" content="Muhit — Arabic Dictionary">
-<meta property="og:description" content="48,000+ Arabic words, roots and full verb conjugations — all offline.">
-<meta property="og:image" content="https://muhit.site/assets/icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Muhit | Offline Arabic dictionary with roots and verb conjugation</title>
+<meta name="description" content="Muhit is an offline Arabic and English dictionary with roots, full verb conjugations, textbook vocabulary and spaced-repetition practice.">
+<link rel="canonical" href="https://muhit.site/">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Muhit">
+<meta property="og:title" content="Muhit | Offline Arabic dictionary with roots and verb conjugation">
+<meta property="og:description" content="48,000 Arabic words, their roots and every verb form. Works offline.">
+<meta property="og:image" content="https://muhit.site/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://muhit.site/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/icon.png">
 <link rel="apple-touch-icon" href="/assets/icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600&family=Alata&family=IBM+Plex+Sans+Arabic:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="/assets/fonts/ReadexPro-Medium.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="/assets/style.css">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "MobileApplication", "name": "Muhit", "alternateName": "مُحِيط", "applicationCategory": "EducationalApplication", "operatingSystem": "iOS, Android", "description": "Offline Arabic-English dictionary with 48,000+ vowelled words, roots, full verb conjugation tables, textbook vocabulary, spaced-repetition practice and Mi'rāb sentence analysis.", "inLanguage": ["en", "ar"], "url": "https://muhit.site/", "image": "https://muhit.site/assets/og-image.png", "publisher": {"@type": "Organization", "name": "Muhit", "url": "https://muhit.site", "logo": "https://muhit.site/assets/icon.png", "email": "admin@muhit.site"}}, {"@context": "https://schema.org", "@type": "WebSite", "name": "Muhit", "url": "https://muhit.site/"}]</script>
+<script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <a class="brand" href="/">
-      <img src="/assets/logo.png" alt="">
-      <span class="label">Arabic<br>Dictionary</span>
-    </a>
-    <span class="pill">Coming soon to iPhone</span>
-  </header>
+<a class="skip" href="#main">Skip to content</a>
 
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Muhit home"><img src="/assets/logo-sm.png" alt="" width="30" height="34">Muhit</a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li class="hide-sm"><a href="#features">Features</a></li>
+        <li class="hide-sm"><a href="#mirab">Mi'rāb</a></li>
+        <li class="hide-md"><a href="#practice">Practice</a></li>
+        <li><a href="/guides/">Guides</a></li>
+        <li><a href="mailto:admin@muhit.site">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
   <section class="hero">
-    <img class="logo" src="/assets/logo.png" alt="Muhit">
-    <div class="label">مُحِيط · The Ocean of Words</div>
-    <h1>The Arabic dictionary that lives on your phone</h1>
-    <p>Look up any word, see its root and its whole family, conjugate every verb, and practise the words you save — all offline.</p>
-    <div class="actions">
-      <span class="btn">Coming soon to the App Store</span>
-      <a class="btn ghost" href="#features">See what's inside</a>
-    </div>
-  </section>
-
-  <section class="stats">
-    <div class="stat"><b>48,000+</b><span>Arabic words</span></div>
-    <div class="stat"><b>5,700+</b><span>roots</span></div>
-    <div class="stat"><b>6,600+</b><span>verbs fully conjugated</span></div>
-    <div class="stat"><b>100%</b><span>offline</span></div>
-  </section>
-
-  <section id="features">
-    <div class="section-head">
-      <div class="label">What's inside</div>
-      <h2>Everything you need to learn Arabic words</h2>
-    </div>
-    <div class="grid">
-      <div class="card">
-        <span class="ar" lang="ar" dir="rtl">كِتَاب</span>
-        <h3>Search both ways</h3>
-        <p>Type Arabic with or without vowels, English, or a root — results show up instantly.</p>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1 data-reveal>Arabic,<br><em>understood.</em></h1>
+        <p class="hero-sub" data-reveal style="--d:120ms">The dictionary that lives on your phone: <strong>48,000 words</strong>, their roots, every verb form, and practice that remembers.</p>
+        <div class="hero-cta" data-reveal style="--d:220ms">
+          <span class="store" role="img" aria-label="Coming soon to iPhone and Android">
+            <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M176 16H80a24 24 0 0 0-24 24v176a24 24 0 0 0 24 24h96a24 24 0 0 0 24-24V40a24 24 0 0 0-24-24M72 64h112v128H72Zm8-32h96a8 8 0 0 1 8 8v8H72v-8a8 8 0 0 1 8-8m96 192H80a8 8 0 0 1-8-8v-8h112v8a8 8 0 0 1-8 8"/></svg>
+            <span><small>Coming soon to</small><b>iPhone and Android</b></span>
+          </span>
+        </div>
       </div>
-      <div class="card">
-        <span class="ar" lang="ar" dir="rtl">ك-ت-ب</span>
-        <h3>Roots and families</h3>
-        <p>Open a root and see every word built from it: <bdi lang="ar" dir="rtl">كَتَبَ، كِتَاب، مَكْتَبَة، كَاتِب</bdi> and more.</p>
-      </div>
-      <div class="card">
-        <span class="ar" lang="ar" dir="rtl">يَكْتُبُ</span>
-        <h3>Full conjugations</h3>
-        <p>Past, present, subjunctive, jussive, imperative and passive — for every person.</p>
-      </div>
-      <div class="card">
-        <span class="ar" lang="ar" dir="rtl">الدَّرْسُ</span>
-        <h3>Your textbook, lesson by lesson</h3>
-        <p>Vocabulary for Bayna Yadayk and the Madinah books, organised exactly as you study it.</p>
-      </div>
-      <div class="card">
-        <span class="ar" lang="ar" dir="rtl">رَاجِعْ</span>
-        <h3>Practice that remembers</h3>
-        <p>Flashcards and quizzes with spaced repetition, from the folders you choose.</p>
-      </div>
-      <div class="card">
-        <span class="ar" lang="ar" dir="rtl">إِعْرَاب</span>
-        <h3>Mi'rāb</h3>
-        <p>Paste a sentence and understand it word by word — grammar explained simply.</p>
+      <div class="hero-phones" aria-hidden="true">
+        <div class="phone back"><img src="/assets/img/02-word.webp" alt="" width="543" height="1180" fetchpriority="low"></div>
+        <div class="phone front" data-reveal style="--d:160ms"><img src="/assets/img/01-home.webp" alt="" width="543" height="1180" fetchpriority="high"></div>
       </div>
     </div>
   </section>
 
-  <section class="band">
-    <div class="label">Your words, everywhere</div>
-    <h2>No account needed. Sync if you want.</h2>
-    <p>Muhit works on its own from the first launch. Create a free account to keep your saved words and practice progress in sync across devices.</p>
-    <span class="btn">Coming soon to the App Store</span>
+  <section class="numbers" aria-label="Muhit in numbers">
+    <div class="wrap">
+      <ul>
+        <li data-reveal><b>48,000+</b><span>Arabic words and phrases</span></li>
+        <li data-reveal style="--d:60ms"><b>5,700+</b><span>roots, each with its family</span></li>
+        <li data-reveal style="--d:120ms"><b>6,600+</b><span>verbs, fully conjugated</span></li>
+        <li data-reveal style="--d:180ms"><b>Offline</b><span>no signal needed, ever</span></li>
+      </ul>
+    </div>
   </section>
 
-  <footer>
-    <span>© 2026 Muhit · Arabic Dictionary</span>
-    <span><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="mailto:admin@muhit.site">admin@muhit.site</a></span>
-  </footer>
-</div>
+  <section class="section" aria-labelledby="anatomy-title">
+    <div class="wrap">
+      <h2 class="section-title" id="anatomy-title" data-reveal>One word. All of it.</h2>
+      <p class="section-lead" data-reveal style="--d:80ms">Open any word and see everything a learner needs, laid out the way you read it.</p>
+      <div class="anatomy">
+        <div class="notes left">
+          <div class="note-item" data-reveal><span class="ar" lang="ar" dir="rtl">مَكْتَبَة</span><h3>Fully vowelled</h3><p>Every headword shows its vowels, so you learn the word the way it is said.</p></div>
+          <div class="note-item" data-reveal style="--d:80ms"><h3>Root and plural at a glance</h3><p>Tap the root letters to see the words built from them.</p></div>
+        </div>
+        <div class="phone" data-reveal style="--d:120ms"><img src="/assets/img/02-word.webp" alt="Muhit's page for مَكْتَبَة: its meanings, root ك ت ب, plural مَكْتَبَات and an example sentence." width="543" height="1180" loading="lazy"></div>
+        <div class="notes">
+          <div class="note-item" data-reveal style="--d:160ms"><h3>Meanings in order</h3><p>Numbered from the most common, never buried in a paragraph.</p></div>
+          <div class="note-item" data-reveal style="--d:220ms"><h3>Real example sentences</h3><p>Short, vowelled sentences with an English translation, the word highlighted.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features" aria-labelledby="features-title">
+    <div class="wrap">
+      <h2 class="section-title" id="features-title" data-reveal>Everything around the word.</h2>
+      <div class="bento">
+        <article class="tile tile-roots" data-reveal>
+          <h3>Look up Arabic words by root</h3>
+          <p>Open <span class="ar" lang="ar">ك ت ب</span> and see <span class="ar" lang="ar">كِتَاب، كَاتِب، مَكْتَبَة</span> and every other word built on it. <a class="more-link" href="/guides/arabic-roots/">How Arabic roots work</a></p>
+          <div class="shot"><img src="/assets/img/04-root.webp" alt="The root ك ت ب in Muhit, listing 25 related words." width="543" height="1180" loading="lazy"></div>
+        </article>
+        <article class="tile" data-reveal style="--d:60ms">
+          <h3>Arabic verb conjugation tables</h3>
+          <p>Past, present, subjunctive, jussive, imperative and passive, for all thirteen persons. <a class="more-link" href="/guides/arabic-verb-conjugation/">Conjugation guide</a></p>
+          <div class="shot"><img src="/assets/img/08-conjugation.webp" alt="The full conjugation table for كَتَبَ." width="543" height="1180" loading="lazy"></div>
+        </article>
+        <article class="tile" data-reveal style="--d:120ms">
+          <h3>Search Arabic with or without vowels</h3>
+          <p>Type Arabic with or without vowels, or type English.</p>
+          <div class="shot"><img src="/assets/img/03-search.webp" alt="Searching for library returns مَكْتَبَة first." width="543" height="1180" loading="lazy"></div>
+        </article>
+        <article class="tile tile-offline" data-reveal style="--d:60ms">
+          <svg class="glyph" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M213.92 210.62a8 8 0 1 1-11.84 10.76l-52-57.15a60 60 0 0 0-57.41 7.24 8 8 0 1 1-9.42-12.93A75.43 75.43 0 0 1 128 144c1.28 0 2.55 0 3.82.1l-26.92-29.61A108 108 0 0 0 61 135.31 8 8 0 0 1 49.73 134 8 8 0 0 1 51 122.77a124.3 124.3 0 0 1 41.71-21.66L69.37 75.4a155.4 155.4 0 0 0-40.29 24A8 8 0 0 1 18.92 87 171.9 171.9 0 0 1 58 62.86L42.08 45.38a8 8 0 1 1 11.84-10.76ZM128 192a12 12 0 1 0 12 12 12 12 0 0 0-12-12M237.08 87A172.3 172.3 0 0 0 106 49.4a8 8 0 1 0 2 15.87A158 158 0 0 1 128 64a156.25 156.25 0 0 1 98.92 35.37A8 8 0 0 0 237.08 87M195 135.31a8 8 0 0 0 11.24-1.3 8 8 0 0 0-1.3-11.24 124.25 124.25 0 0 0-51.73-24.2 8 8 0 1 0-3.21 15.67 108.1 108.1 0 0 1 45 21.07"/></svg>
+          <h3 class="big">No signal?<br>No problem.</h3>
+          <p>The whole dictionary lives on your phone. It works on a plane, in a classroom, anywhere.</p>
+        </article>
+        <article class="tile" data-reveal style="--d:120ms">
+          <h3>Madinah and Bayna Yadayk vocabulary</h3>
+          <p>Vocabulary for the Madinah and Bayna Yadayk courses, in the order you study it.</p>
+          <div class="shot"><img src="/assets/img/10-lesson.webp" alt="Lesson 1, Part 1 of the Madinah Arabic course in Muhit." width="543" height="1180" loading="lazy"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section mirab" id="mirab" aria-labelledby="mirab-title">
+    <div class="wrap">
+      <div class="mirab-head">
+        <span class="label" data-reveal>Mi'rāb</span>
+        <h2 class="section-title" id="mirab-title" data-reveal style="--d:60ms; margin-top: 14px; max-width: 18ch">Every word in a sentence has a role.</h2>
+        <p class="section-lead" data-reveal style="--d:120ms">Write a sentence and Mi'rāb explains its i'rāb word by word: the role, the case, and the sign that shows it. <a class="more-link" href="/guides/what-is-irab/">What is i'rāb?</a></p>
+      </div>
+      <div class="mirab-demo" aria-label="Example analysis">
+        <div class="sentence" data-reveal>
+          <span class="tr">"The student came."</span>
+          <span class="ar" lang="ar" dir="rtl">جَاءَ الطَّالِبُ.</span>
+        </div>
+        <div class="irab" data-reveal style="--d:80ms">
+          <div class="top-row"><span class="role">Past-tense verb</span><span class="ar word" lang="ar">جَاءَ</span></div>
+          <span class="ar why" lang="ar" dir="rtl">فِعْلٌ مَاضٍ مَبْنِيٌّ عَلَى الْفَتْحِ.</span>
+        </div>
+        <div class="irab" data-reveal style="--d:140ms">
+          <div class="top-row"><span class="role">Subject, nominative</span><span class="ar word" lang="ar">الطَّالِبُ</span></div>
+          <span class="ar why" lang="ar" dir="rtl">فَاعِلٌ مَرْفُوعٌ، وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ عَلَى آخِرِهِ.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="practice" aria-labelledby="practice-title">
+    <div class="wrap">
+      <h2 class="section-title" id="practice-title" data-reveal>Practice that remembers.</h2>
+      <p class="section-lead" data-reveal style="--d:80ms">Save words into folders, then review them just before you would forget. Spaced repetition does the scheduling.</p>
+      <div class="gallery">
+        <figure data-reveal>
+          <div class="phone"><img src="/assets/img/11-flashcard.webp" alt="A flashcard for نَعَمْ, yes, with Again, Hard, Good and Easy buttons." width="543" height="1180" loading="lazy"></div>
+          <figcaption><b>Review with flashcards</b><span>Again, Hard, Good or Easy</span></figcaption>
+        </figure>
+        <figure data-reveal style="--d:100ms">
+          <div class="phone"><img src="/assets/img/09-folders.webp" alt="Folders: saved words, starred words and textbooks." width="543" height="1180" loading="lazy"></div>
+          <figcaption><b>Keep your own folders</b><span>And choose which ones to practise</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" aria-labelledby="closing-title">
+    <span class="watermark ar" lang="ar" aria-hidden="true">مُحِيط</span>
+    <div class="wrap">
+      <h2 id="closing-title" data-reveal>No account needed.<br>Sync if you want.</h2>
+      <p data-reveal style="--d:80ms">Muhit works from the first launch. A free account keeps your words in step across your devices.</p>
+      <span class="store" role="img" aria-label="Coming soon to iPhone and Android" data-reveal style="--d:160ms">
+        <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M176 16H80a24 24 0 0 0-24 24v176a24 24 0 0 0 24 24h96a24 24 0 0 0 24-24V40a24 24 0 0 0-24-24M72 64h112v128H72Zm8-32h96a8 8 0 0 1 8 8v8H72v-8a8 8 0 0 1 8-8m96 192H80a8 8 0 0 1-8-8v-8h112v8a8 8 0 0 1-8 8"/></svg>
+        <span><small>Coming soon to</small><b>iPhone and Android</b></span>
+      </span>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/logo-sm.png" alt="" width="30" height="34">Muhit</a>
+    <nav aria-label="Site"><a href="/guides/">Guides</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/delete-account/">Delete account</a><a href="mailto:admin@muhit.site">Contact</a></nav>
+    <small>© 2026 Muhit, Sweden</small>
+  </div>
+</footer>
+
+<script src="/assets/site.js" defer></script>
 </body>
 </html>

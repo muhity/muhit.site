@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /confirmed/
+Disallow: /reset/
+
+Sitemap: https://muhit.site/sitemap.xml
