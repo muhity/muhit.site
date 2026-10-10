@@ -1,6 +1,6 @@
 # Muhit
 
-> Muhit (مُحِيط) is an offline Arabic-English dictionary app for iPhone and Android, made in Sweden. It has 48,000+ fully vowelled Arabic words with roots, plurals and example sentences, full verb conjugation tables (every person, tense and mood, active and passive), root browsing, word lists for the Madinah and Bayna Yadayk Arabic courses, folders, flashcards and quizzes with spaced repetition, and Mi'rāb, an AI tool that explains the i'rāb (grammatical analysis) of an Arabic sentence word by word. It works without an account; an optional account syncs saved words between devices. No ads, no tracking.
+> Muhit (مُحِيط) is an offline Arabic-English dictionary app for iPhone and Android, made in Sweden. It has 48,000+ fully vowelled Arabic words with roots, plurals and example sentences, full verb conjugation tables (every person, tense and mood, active and passive), root browsing, word lists for the Madinah and Bayna Yadayk Arabic courses, folders, flashcards and quizzes with spaced repetition, and Mi'rab AI, a tool that explains the i'rāb (grammatical analysis) of an Arabic sentence word by word. It works without an account; an optional account syncs saved words between devices. No ads, no tracking.
 
 ## Guides
 - [Arabic roots explained: how to find a word by its root](https://muhit.site/guides/arabic-roots/): What an Arabic root is, how patterns build words from it, and how to find the root of any Arabic word, with examples from ك ت ب.
