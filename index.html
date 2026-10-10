@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-PXKem6akuWbCb5ewP8m6E3YfstSqd3wR5G1FWbf0isc='; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <title>Muhit | Offline Arabic dictionary with roots and verb conjugation</title>
 <meta name="description" content="Muhit is an offline Arabic and English dictionary with roots, full verb conjugations, textbook vocabulary and spaced-repetition practice.">
 <link rel="canonical" href="https://muhit.site/">
@@ -19,15 +20,15 @@
 <link rel="icon" href="/assets/icon.png">
 <link rel="apple-touch-icon" href="/assets/icon.png">
 <link rel="preload" href="/assets/fonts/ReadexPro-Medium.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="/assets/style.css?v=cfd27552">
+<link rel="stylesheet" href="/assets/style.css?v=606be1e4">
 <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "MobileApplication", "name": "Muhit", "alternateName": "مُحِيط", "applicationCategory": "EducationalApplication", "operatingSystem": "iOS, Android", "description": "Offline Arabic-English dictionary with 48,000+ vowelled words, roots, full verb conjugation tables, textbook vocabulary, spaced-repetition practice and Mi'rāb sentence analysis.", "inLanguage": ["en", "ar"], "url": "https://muhit.site/", "image": "https://muhit.site/assets/og-image.png", "publisher": {"@type": "Organization", "name": "Muhit", "url": "https://muhit.site", "logo": "https://muhit.site/assets/icon.png", "email": "admin@muhit.site"}}, {"@context": "https://schema.org", "@type": "WebSite", "name": "Muhit", "url": "https://muhit.site/"}]</script>
 <script>document.documentElement.classList.add("js");setTimeout(function(){document.documentElement.classList.add("revealed")},2500);</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="nav" id="nav">
-  <div class="wrap">
+<header class="nav">
+  <div class="wrap glass">
     <a class="brand" href="/" aria-label="Muhit home"><img src="/assets/logo-sm.png" alt="" width="30" height="34">Muhit</a>
     <nav aria-label="Main">
       <ul class="nav-links">
@@ -45,9 +46,9 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <h1 data-reveal>Arabic,<br><em>understood.</em></h1>
-        <p class="hero-sub" data-reveal style="--d:120ms">The dictionary that lives on your phone: <strong>48,000 words</strong>, their roots, every verb form, and practice that remembers.</p>
-        <div class="hero-cta" data-reveal style="--d:220ms">
+        <h1><span class="line" data-reveal>Arabic,</span> <span class="line" data-reveal style="--d:110ms"><em>understood.</em></span></h1>
+        <p class="hero-sub" data-reveal style="--d:220ms">The dictionary that lives on your phone: <strong>48,000 words</strong>, their roots, every verb form, and practice that remembers.</p>
+        <div class="hero-cta" data-reveal style="--d:320ms">
           <span class="store" role="img" aria-label="Coming soon to iPhone and Android">
             <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M176 16H80a24 24 0 0 0-24 24v176a24 24 0 0 0 24 24h96a24 24 0 0 0 24-24V40a24 24 0 0 0-24-24M72 64h112v128H72Zm8-32h96a8 8 0 0 1 8 8v8H72v-8a8 8 0 0 1 8-8m96 192H80a8 8 0 0 1-8-8v-8h112v8a8 8 0 0 1-8 8"/></svg>
             <span><small>Coming soon to</small><b>iPhone and Android</b></span>
@@ -133,13 +134,13 @@
       <div class="mirab-demo" aria-label="Example analysis">
         <div class="sentence" data-reveal>
           <span class="tr">"The student came."</span>
-          <span class="ar" lang="ar" dir="rtl">جَاءَ الطَّالِبُ.</span>
+          <span class="ar" lang="ar" dir="rtl"><span data-w="1">جَاءَ</span> <span data-w="2">الطَّالِبُ</span>.</span>
         </div>
-        <div class="irab" data-reveal style="--d:80ms">
+        <div class="irab" data-for="1" data-reveal style="--d:80ms">
           <div class="top-row"><span class="role">Past-tense verb</span><span class="ar word" lang="ar">جَاءَ</span></div>
           <span class="ar why" lang="ar" dir="rtl">فِعْلٌ مَاضٍ مَبْنِيٌّ عَلَى الْفَتْحِ.</span>
         </div>
-        <div class="irab" data-reveal style="--d:140ms">
+        <div class="irab" data-for="2" data-reveal style="--d:140ms">
           <div class="top-row"><span class="role">Subject, nominative</span><span class="ar word" lang="ar">الطَّالِبُ</span></div>
           <span class="ar why" lang="ar" dir="rtl">فَاعِلٌ مَرْفُوعٌ، وَعَلَامَةُ رَفْعِهِ الضَّمَّةُ الظَّاهِرَةُ عَلَى آخِرِهِ.</span>
         </div>
@@ -185,6 +186,6 @@
   </div>
 </footer>
 
-<script src="/assets/site.js?v=d8afa8a9" defer></script>
+<script src="/assets/site.js?v=0b70996f" defer></script>
 </body>
 </html>

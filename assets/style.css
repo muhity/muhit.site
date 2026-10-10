@@ -51,20 +51,56 @@ p { margin: 0; text-wrap: pretty; }
 }
 [hidden] { display: none !important; }
 
-/* Navigation */
-.nav {
-  position: sticky; top: 0; z-index: 20;
-  background: rgba(0, 0, 0, 0.72);
-  -webkit-backdrop-filter: saturate(160%) blur(18px); backdrop-filter: saturate(160%) blur(18px);
-  border-bottom: 1px solid transparent;
+/* Liquid Glass, for the floating control layer only (Apple's rule: glass is for
+   navigation over content, never for the content itself). Frosted everywhere;
+   on Chromium site.js adds real refraction at the rim with an SVG displacement
+   map built for the element's exact size. The rim catches light where the
+   pointer is, and a press lights the glass from the finger. */
+@property --mx { syntax: "<length-percentage>"; inherits: true; initial-value: 24%; }
+@property --my { syntax: "<length-percentage>"; inherits: true; initial-value: 0%; }
+.glass {
+  position: relative; isolation: isolate;
+  background: rgba(34, 36, 40, 0.36);
+  -webkit-backdrop-filter: blur(14px) saturate(180%); backdrop-filter: blur(14px) saturate(180%);
+  box-shadow: inset 0 0 14px rgba(255, 255, 255, 0.05), 0 12px 32px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: --mx 160ms linear, --my 160ms linear;
 }
-.nav.scrolled { border-bottom-color: var(--line); }
-.nav .wrap { height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.glass::before, .glass::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; }
+.glass::before {
+  padding: 1px;
+  background:
+    radial-gradient(110px 60px at var(--mx) var(--my), rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0) 70%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1) 30%, rgba(255, 255, 255, 0.03) 50%, rgba(255, 255, 255, 0.1) 70%, rgba(255, 255, 255, 0.34));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+.glass::after {
+  z-index: -1; opacity: 0; transition: opacity 320ms var(--ease-out);
+  background: radial-gradient(180px 120px at var(--mx) var(--my), rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 70%);
+}
+@media (hover: hover) { .glass:hover::after { opacity: 1; } }
+.glass:active::after { opacity: 1; transition-duration: 80ms; background: radial-gradient(200px 140px at var(--mx) var(--my), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 70%); }
+
+/* Navigation: a floating glass capsule; the page scrolls underneath it. */
+.nav { position: sticky; top: 0; z-index: 20; padding: 12px var(--gutter) 0; pointer-events: none; }
+.nav::before { content: ""; position: absolute; inset: 0 0 auto; height: 44px; z-index: -1; background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); }
+.nav .wrap {
+  pointer-events: auto; max-width: calc(var(--wrap) - 2 * var(--gutter)); height: 60px; padding: 0 8px 0 18px; border-radius: 999px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+}
 .brand { display: flex; align-items: center; gap: 10px; color: var(--tx); text-decoration: none; font-weight: 500; font-size: 18px; letter-spacing: -0.01em; }
 .brand img { width: 30px; height: auto; }
-.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { color: var(--mut); text-decoration: none; font-size: 15px; transition: color 160ms ease; }
-.nav-links a:hover { color: var(--tx); }
+.nav-links { position: relative; display: flex; align-items: center; gap: 2px; list-style: none; margin: 0; padding: 0; }
+.nav-links a { position: relative; z-index: 1; display: block; padding: 9px 15px; border-radius: 999px; color: var(--mut); text-decoration: none; font-size: 15px; transition: color 160ms ease; }
+.nav-links a:hover, .nav-links a[aria-current] { color: var(--tx); }
+/* The selection: a lighter drop of glass that glides between links on a
+   spring and swells while it moves, like the iOS 26 tab bar. */
+.lens {
+  position: absolute; left: 0; top: 50%; height: 40px; margin-top: -20px; border-radius: 999px; pointer-events: none;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), inset 0 0 0 1px rgba(255, 255, 255, 0.1), inset 0 -6px 12px rgba(255, 255, 255, 0.04);
+  opacity: 0; transition: opacity 220ms ease;
+}
 
 /* Buttons */
 .btn {
@@ -111,6 +147,7 @@ p { margin: 0; text-wrap: pretty; }
 .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; align-items: end; gap: 48px; }
 .hero-copy { padding-bottom: clamp(48px, 9vw, 120px); }
 .hero h1 { font-size: clamp(52px, 6.4vw, 92px); line-height: 0.98; letter-spacing: -0.045em; }
+.hero h1 .line { display: block; }
 .hero h1 em { font-style: normal; color: var(--acs); }
 .hero-sub { margin-top: 28px; max-width: 30ch; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--mut); }
 .hero-sub strong { color: var(--tx); font-weight: 500; }
@@ -130,7 +167,7 @@ p { margin: 0; text-wrap: pretty; }
 .numbers span { display: block; margin-top: 10px; color: var(--mut); font-size: 15px; }
 
 /* Shared section rhythm */
-.section { padding: clamp(80px, 11vw, 136px) 0; }
+.section { padding: clamp(80px, 11vw, 136px) 0; scroll-margin-top: 40px; }
 .section-title { font-size: clamp(36px, 5.4vw, 72px); line-height: 1.02; letter-spacing: -0.035em; max-width: 14ch; }
 .section-lead { margin-top: 20px; max-width: 52ch; color: var(--mut); font-size: 18px; }
 
@@ -180,6 +217,12 @@ p { margin: 0; text-wrap: pretty; }
 }
 .sentence .ar { font-size: clamp(36px, 5vw, 56px); line-height: 1.5; direction: rtl; }
 .sentence .tr { color: var(--mut); font-size: 17px; }
+/* Each word lights up as the card explaining it arrives. */
+.sentence [data-w] {
+  background: linear-gradient(currentColor, currentColor) right bottom / 0 2px no-repeat;
+  transition: color 600ms var(--ease-out) 380ms, background-size 700ms var(--ease-out) 380ms;
+}
+.mirab-demo:has([data-for="1"].in) [data-w="1"], .mirab-demo:has([data-for="2"].in) [data-w="2"] { color: var(--acs); background-size: 100% 2px; }
 .irab { border-radius: 28px; padding: 28px; background: var(--surf); box-shadow: inset 0 0 0 1px var(--line); }
 .irab .top-row { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
 .irab .ar.word { font-size: 34px; line-height: 1.4; color: var(--acs); }
@@ -213,10 +256,45 @@ p { margin: 0; text-wrap: pretty; }
 .footer a:hover { color: var(--tx); }
 .footer small { color: var(--mut); font-size: 13px; }
 
-/* Reveal on scroll (only when JS has marked the page; content is visible without JS) */
-.js [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out); transition-delay: var(--d, 0ms); }
-.js [data-reveal].in, .revealed [data-reveal] { opacity: 1; transform: none; }
+/* Reveal on scroll (only when JS has marked the page; content is visible without JS).
+   .revealed is the inline script's safety net for when site.js never runs; once
+   site.js is watching (.io) it no longer applies, so later sections still animate. */
+.js [data-reveal] {
+  opacity: 0; transform: translateY(18px);
+  transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out), filter 700ms var(--ease-out);
+  transition-delay: var(--d, 0ms);
+}
+.js :where(.line, .section-title, .closing h2)[data-reveal] { filter: blur(12px); }
+.js .notes.left [data-reveal] { transform: translateX(-32px); }
+.js .notes:not(.left) [data-reveal] { transform: translateX(32px); }
+.js [data-reveal].in, .js .notes [data-reveal].in, .revealed:not(.io) [data-reveal] { opacity: 1; transform: none; filter: none; }
 .js .hero [data-reveal] { transition-duration: 900ms; }
+
+/* Scroll-linked motion (Safari 26, Chrome; elsewhere the page is simply still).
+   Uses the individual translate/scale/rotate properties so it stacks with the
+   reveal transforms above. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-phones .front { animation: hero-front linear both; animation-timeline: scroll(root); animation-range: 0 90vh; }
+    .hero-phones .back { animation: hero-back linear both; animation-timeline: scroll(root); animation-range: 0 90vh; }
+    .anatomy .phone { animation: settle linear both; animation-timeline: view(); animation-range: entry 0% cover 45%; }
+    .tile { view-timeline: --tile; }
+    .tile:not(.tile-roots) .shot img { animation: screen-scroll linear both; animation-timeline: --tile; animation-range: cover; }
+    .closing { view-timeline: --closing; }
+    .closing .watermark { animation: glide linear both; animation-timeline: --closing; animation-range: cover; }
+  }
+  @media (prefers-reduced-motion: no-preference) and (min-width: 768px) {
+    .gallery figure { animation: float-a linear both; animation-timeline: view(); animation-range: cover; }
+    .gallery figure:nth-child(2) { animation-name: float-b; }
+  }
+}
+@keyframes hero-front { to { translate: 0 -14%; } }
+@keyframes hero-back { to { translate: 0 -4%; rotate: -5deg; } }
+@keyframes settle { from { scale: 0.88; } }
+@keyframes screen-scroll { from { translate: 0 4%; } to { translate: 0 -16%; } }
+@keyframes glide { from { translate: 9% 0; } to { translate: -9% 0; } }
+@keyframes float-a { from { translate: 0 40px; } to { translate: 0 -40px; } }
+@keyframes float-b { from { translate: 0 100px; } to { translate: 0 -100px; } }
 
 /* Single-message pages (/confirmed, /reset) */
 .center { min-height: 100dvh; display: flex; align-items: center; justify-content: center; padding: 24px 16px; }
@@ -261,7 +339,9 @@ p { margin: 0; text-wrap: pretty; }
   .tile-roots { grid-row: auto; grid-column: 1 / -1; }
 }
 @media (max-width: 767px) {
-  .nav-links { gap: 18px; }
+  .nav .wrap { height: 56px; padding: 0 6px 0 16px; }
+  .nav-links a { padding: 8px 12px; }
+  .lens { height: 38px; margin-top: -19px; }
   .nav-links li.hide-sm { display: none; }
   .hero-grid { grid-template-columns: 1fr; gap: 0; }
   .hero-copy { padding-bottom: 40px; }
@@ -286,9 +366,15 @@ p { margin: 0; text-wrap: pretty; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .js [data-reveal] { transform: none; transition: opacity 300ms ease; }
+  .js [data-reveal] { transform: none !important; filter: none !important; transition: opacity 300ms ease; }
+  .sentence [data-w] { transition-duration: 200ms; }
   .btn, .btn:active { transition: none; transform: none; }
 }
 @media (prefers-reduced-transparency: reduce) {
-  .nav { background: #000; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .glass { background: var(--surf); -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+@media (prefers-contrast: more) {
+  :root { --line: rgba(255, 255, 255, 0.45); --line-strong: rgba(255, 255, 255, 0.6); --mut: #c7c9cd; }
+  .glass { background: var(--surf); -webkit-backdrop-filter: none; backdrop-filter: none; box-shadow: inset 0 0 0 1px var(--line-strong); }
+  .glass::before, .glass::after { display: none; }
 }

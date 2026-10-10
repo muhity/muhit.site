@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- GitHub Pages sends no security headers; this is the page's policy (no third-party code). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <title>Delete your Muhit account | Muhit</title>
 <meta name="description" content="How to delete your Muhit account and its synced data, in the app or by email, and what is removed.">
 <link rel="canonical" href="https://muhit.site/delete-account/">
@@ -15,29 +17,31 @@
 <meta property="og:image" content="https://muhit.site/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/icon.png">
-<link rel="stylesheet" href="/assets/style.css?v=cfd27552">
+<link rel="stylesheet" href="/assets/style.css?v=606be1e4">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="nav scrolled">
-  <div class="wrap">
+<header class="nav">
+  <div class="wrap glass">
     <a class="brand" href="/" aria-label="Muhit home"><img src="/assets/logo-sm.png" alt="" width="30" height="34">Muhit</a>
     <nav aria-label="Main"><ul class="nav-links"><li><a href="/guides/">Guides</a></li><li><a href="mailto:admin@muhit.site">Contact</a></li></ul></nav>
   </div>
 </header>
 <div class="wrap doc">
   <main id="main">
-    <div class="label">Last updated 8 October 2026</div>
+    <div class="label">Last updated 10 October 2026</div>
     <h1>Delete your Muhit account</h1>
     <p>Muhit works without an account. If you created one to sync your words, you can delete it, and everything synced with it, at any time.</p>
     <h2>In the app</h2>
     <ol><li>Open Muhit and go to <b>Settings</b>.</li><li>Under <b>Account</b>, tap <b>Delete account</b>.</li><li>Confirm. Your account is deleted straight away.</li></ol>
     <h2>Without the app</h2>
     <p>Email <a href="mailto:admin@muhit.site?subject=Delete%20my%20Muhit%20account">admin@muhit.site</a> from the address you signed up with and ask us to delete your account. We will confirm and delete it within 30 days, usually much sooner.</p>
+    <h2>Subscriptions</h2>
+    <p>Deleting your Muhit account does not cancel an App Store or Google Play subscription. Manage or cancel billing separately in your store account: <a href="https://apps.apple.com/account/subscriptions">Apple subscriptions</a> or <a href="https://play.google.com/store/account/subscriptions">Google Play subscriptions</a>.</p>
     <h2>What is deleted</h2>
-    <p>Your account, email address and sign-in details, and your synced folders, saved words, favourites, practice progress and Mi'rāb usage counts. Copies in our provider's backups are overwritten within a short period.</p>
+    <p>Your account, email address and sign-in details, and your synced folders, saved words, favourites, practice progress, in-app reports and account-linked Mi'rāb request records. Copies in our provider's backups are overwritten within a short period.</p>
     <h2>What is kept</h2>
-    <p>Nothing linked to you. Mi'rāb analyses are stored without any link to who asked and expire after 90 days. If you used Sign in with Apple, a token needed to tell Apple to revoke access is kept until that succeeds, at most 30 days. Words stored only on your phone stay there until you delete the app. See the <a href="/privacy/">Privacy Policy</a>.</p>
+    <p>Mi'rāb free-analysis counters, keyed by your account ID and hashed email/device identifiers, remain after account deletion to prevent trial resets and expire 12 months after last use. Cached analyses are not linked to an account and expire after 90 days. If you used Sign in with Apple, a token needed to revoke access may remain in a restricted retry queue for up to 30 days. Words stored only on your phone stay there until you delete them or the app. Store billing and RevenueCat customer records are separate from Muhit account deletion; contact admin@muhit.site for help with a data-deletion request involving those providers. See the <a href="/privacy/">Privacy Policy</a>.</p>
   </main>
 </div>
 <footer class="footer">
@@ -47,5 +51,6 @@
     <small>© 2026 Muhit, Sweden</small>
   </div>
 </footer>
+<script src="/assets/site.js?v=0b70996f" defer></script>
 </body>
 </html>
